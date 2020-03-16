@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\DashboardEntity;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DashboardController
+class DashboardController extends AbstractController
 {
     /**
      * @Route("/")
@@ -13,7 +15,7 @@ class DashboardController
      */
     public function index(): Response
     {
-        return new Response('test');
+        return $this->render('dashboard/index.html.twig');
     }
 
     /**
@@ -24,6 +26,8 @@ class DashboardController
      */
     public function show(int $id): Response
     {
-        return new Response('aaaa: '.$id);
+        return $this->render('dashboard/show.html.twig', [
+            'dashboard' => new DashboardEntity($id)
+        ]);
     }
 }
