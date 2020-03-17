@@ -1,3 +1,9 @@
 {% extends 'dashboard/index.html.twig' %}
 
-{% block body_title %}Dashboard {{ dump(dashboard) }}{% endblock %}
+{% block body_title %}
+    <a href="{{ path('app_dashboard') }}">Dashboard</a> -> # {{ dashboard.id }}
+{% endblock %}
+{% block body_body %}
+        {{ dump(dashboard) }}
+{% endblock %}
+

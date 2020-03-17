@@ -2,8 +2,51 @@
 
 {% block title %}Dashboard{% endblock %}
 {% block body %}
-    <h1>
-        {% block body_title %}Dashboard{% endblock %}
-    </h1>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="my-4">{% block body_title %}Dashboard{% endblock %}</h2>
+                <div style="box-shadow: 2px 3px 9px 4px rgba(0,0,0,0.04);">
+                    <div class="q-container-show p-4">
+                        <div class="row">
+                            {% block body_body %}
+                                <ul class="list-unstyled">
+                                    <li class="mb-4">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="mr-2 pt-2">
+                                                dashboard One
+                                            </div>
+                                            <div class="mr-3 pt-2">
+                                                some graphics
+                                            </div>
+                                        </div>
+                                        <a class="answer-link" href="{{ path('app_dashboard_show', {id : 23423423}) }}">
+                                            <p class="q-display-response text-center p-3">
+                                                <i class="fa fa-magic magic-wand"></i> Go here
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="mb-4">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="mr-2 pt-2">
+                                                dashboard Two
+                                            </div>
+                                            <div class="mr-3 pt-2">
+                                                some graphics
+                                            </div>
+                                        </div>
+                                        <a class="answer-link" href="{{ path('app_dashboard_show', {id : 7765}) }}">
+                                            <p class="q-display-response text-center p-3">
+                                                <i class="fa fa-magic magic-wand"></i> Go here
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
