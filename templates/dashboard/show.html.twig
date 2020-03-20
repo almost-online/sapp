@@ -1,9 +1,13 @@
 {% extends 'dashboard/index.html.twig' %}
 
-{% block body_title %}
-    <a href="{{ path('app_dashboard') }}">Dashboard</a> -> # {{ dashboard.id }}
+{% block title %}
+    {{ parent() }} # {{ dashboard.id }}
 {% endblock %}
-{% block body_body %}
-        {{ dump(dashboard) }}
+
+{% block breads_crumbs %}
+    <a href="{{ path('app_dashboard') }}">{{ parent() }}</a> -> # {{ dashboard.id }}
+{% endblock %}
+{% block main_container %}
+    {{ dump(dashboard) }}
 {% endblock %}
 
